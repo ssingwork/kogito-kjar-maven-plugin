@@ -19,7 +19,7 @@ public class DrlFormatConverter implements KnowledgeFormatConverter {
      */
     @Override
     public String convertToDrl(File sourceFile) throws IOException {
-        return Files.readString(sourceFile.toPath());
+        return Files.readAllBytes(sourceFile.toPath()).toString();
     }
 
     @Override

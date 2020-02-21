@@ -1,5 +1,6 @@
 package ch.welld.kie.format;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -14,11 +15,13 @@ public class KnowledgeFormatConverterFactory {
         // prevent instantiation
     }
 
-    private static List<KnowledgeFormatConverter> converters = List.of(
-        new GdstFormatConverter(),
-        new TemplateFormatConverter(),
-        new DrlFormatConverter()
-    );
+    private static List<KnowledgeFormatConverter> converters = new ArrayList<>();
+    static {
+        converters.add(new GdstFormatConverter());
+        converters.add(new TemplateFormatConverter());
+        converters.add(new DrlFormatConverter());
+    }
+
 
     /**
      * Returns the set of supported file extensions.

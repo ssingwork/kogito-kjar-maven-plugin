@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ch.welld.kie</groupId>
-  <artifactId>welld-kogito-kjar-maven-plugin</artifactId>
+  <artifactId>welld-kogito-kjar-maven-plugin-celtic</artifactId>
   <version>1.3.0-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
 
@@ -51,16 +51,16 @@
   </developers>
 
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-    </repository>
-  </distributionManagement>
+<!--  <distributionManagement>-->
+<!--    <snapshotRepository>-->
+<!--      <id>ossrh</id>-->
+<!--      <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--    </snapshotRepository>-->
+<!--    <repository>-->
+<!--      <id>ossrh</id>-->
+<!--      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
+<!--    </repository>-->
+<!--  </distributionManagement>-->
 
   <prerequisites>
     <maven>${maven.version}</maven>
@@ -262,10 +262,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>11</source>
-          <target>11</target>
-        </configuration>
+<!--        <configuration>-->
+<!--          <source>11</source>-->
+<!--          <target>8</target>-->
+<!--        </configuration>-->
       </plugin>
 
       <plugin>
@@ -291,4 +291,16 @@
       </plugin>
     </plugins>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>CELTICSRV3</id>
+      <name>CELTICSRV3-releases</name>
+      <url>http://192.168.12.88:8080/artifactory/libs-release-local</url>
+    </repository>
+    <snapshotRepository>
+      <id>CELTICSRV3</id>
+      <name>CELTICSRV3-snapshots</name>
+      <url>http://192.168.12.88:8080/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
